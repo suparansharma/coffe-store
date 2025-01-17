@@ -5,6 +5,7 @@ const { MongoClient, ServerApiVersion,ObjectId } = require('mongodb');
 const app = express();
 const port = process.env.PORT || 5000;
 
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -80,6 +81,7 @@ async function run() {
       const result = await coffeeCollection.findOne(query);
       res.send(result);
     })
+    
     app.get('/', (req, res) => {
       res.send('Coffee making server is running');
     });
